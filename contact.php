@@ -4,6 +4,7 @@ $field_email = $_POST['Mail'];
 $field_message = $_POST['Message'];
 
 
+$mail_to = 'mr.paul.murphy@gmail.com';
 $subject = '#Message# '.$field_name;
 
 $body_message = 'From: '.$field_name."\n";
