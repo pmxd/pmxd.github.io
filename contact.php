@@ -4,7 +4,7 @@ $field_email = $_POST['Mail'];
 $field_message = $_POST['Message'];
 
 
-$mail_to = 'mr.paul.murphy@gmail.com';
+$mail_to = 'Mr.Paul.Murphy@gmail.com';
 $subject = '#Message# '.$field_name;
 
 $body_message = 'From: '.$field_name."\n";
@@ -18,7 +18,7 @@ $mail_status = mail($mail_to, $subject, $body_message, $headers);
 
 if ($mail_status) { ?>
  <script language="javascript" type="text/javascript">
-  alert('Thank you for the message. We will contact you shortly.');
+  alert('Thank you for the message. I will contact you shortly.');
   window.location = 'index.html';
  </script>
 <?php
