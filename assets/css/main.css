@@ -27,6 +27,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     color: #333;
 }
+.Hcontainer {
+    position: absolute;
+    top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+    text-align: center;
+}​
 
 
 /* Paragraph & Typographic */
@@ -114,7 +121,7 @@ a:after {
 
 #headerwrap h1 {
 	font-weight: 300;
-	font-size: 70px;
+	font-size: 50px;
 	color: white;
 }
 
