@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="My first game-industry role was a two-year trial by fire. Working directly with the Art Director on a small team, I owned the game's entire 2D interface.">
+  <meta name="author" content="Paul Murphy">
+  <title>Paranoia: Happiness is Mandatory — Paul Murphy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="PMXD" />
+  <link rel="manifest" href="img/favicon/site.webmanifest" />
+<style>
+/* Project-page presentation aligned with index.html and the original case-study template. */
+.case-study { width:100%; }
+.logo-text h1 { font-size:1rem; font-weight:400; line-height:normal; margin:0; }
+.logo-text h1 a { font-weight:inherit; text-decoration:none; color:inherit; }
+header[role="banner"] nav { display:flex; align-items:center; gap:.75rem; flex-wrap:nowrap; justify-content:flex-end; }
+.case-wrap { width:100%; max-width:1280px; margin-inline:auto; padding-inline:1rem; }
+.case-hero { padding:4rem 0 3rem; background:var(--bg-primary); }
+.case-eyebrow { color:var(--text-muted); text-transform:uppercase; letter-spacing:.07em; font-size:.875rem; font-weight:600; margin:0 0 1rem; }
+.case-title { font-size:3rem; line-height:1.1; letter-spacing:-.025em; font-weight:800; margin:0 0 1.5rem; max-width:24ch; color:var(--text-primary); }
+.case-lede { max-width:56rem; font-size:1.25rem; line-height:1.7; color:var(--text-secondary); margin:0; }
+.case-meta { display:flex; flex-wrap:wrap; gap:1.5rem 3rem; margin:3rem 0 0; padding:1.5rem 0 0; border-top:1px solid var(--border-primary); }
+.case-meta div { min-width:9rem; }
+.case-meta dt { color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; font-size:.875rem; font-weight:600; margin-bottom:.5rem; }
+.case-meta dd { margin:0; color:var(--text-primary); font-size:1rem; }
+.case-hero-media { width:100%; max-width:none; margin:0; padding:3rem max(calc((100% - 1280px) / 2 + 1rem), 1rem); background:rgba(23,23,23,.5); border-top:1px solid var(--border-primary); border-bottom:1px solid var(--border-primary); }
+.case-hero-art { display:block; width:100%; height:auto; border:1px solid var(--border-primary); border-radius:.25rem; background:var(--bg-secondary); }
+.case-section { padding:5rem 0; background:var(--bg-primary); border-top:1px solid var(--border-primary); }
+.case-section:first-child { border-top:0; }
+.case-section:nth-of-type(odd) { background:var(--bg-primary); }
+.case-section:nth-of-type(even) { background:rgba(23,23,23,.5); }
+.case-section-head { max-width:56rem; margin-bottom:2.5rem; position:static !important; top:auto !important; inset:auto !important; z-index:auto !important; background:transparent !important; backdrop-filter:none !important; border:0 !important; box-shadow:none !important; }
+.case-number { color:var(--text-muted); font-size:.875rem; letter-spacing:.06em; margin:0 0 .75rem; }
+.case-heading { color:var(--text-primary); font-size:2rem; line-height:1.2; letter-spacing:-.02em; font-weight:700; margin:0 0 1.25rem; }
+.case-intro { color:var(--text-secondary); font-size:1.125rem; line-height:1.7; max-width:56rem; margin:0; }
+.case-layout { display:grid; gap:1.5rem; align-items:start; }
+.case-layout--text { grid-template-columns:minmax(0,1fr); }
+.case-layout--split { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.case-layout--gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.case-layout--cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.case-panel { min-width:0; padding:1.5rem; border:1px solid var(--border-primary); border-radius:.25rem; background:rgba(23,23,23,.5); }
+.case-panel h3 { font-size:1.125rem; line-height:1.4; margin:0 0 .75rem; color:var(--text-primary); }
+.case-panel p { color:var(--text-secondary); font-size:1rem; line-height:1.7; margin:0 0 .9rem; }
+.case-panel p:last-child { margin-bottom:0; }
+.case-panel ul { margin:.75rem 0 0; padding-left:1.25rem; }
+.case-panel li { margin:.5rem 0; color:var(--text-secondary); line-height:1.65; }
+.case-media { margin:0; min-width:0; }
+.case-media img { display:block; width:100%; height:auto; border-radius:.25rem; border:1px solid var(--border-primary); background:var(--bg-secondary); }
+.case-media figcaption { color:var(--text-muted); font-size:.875rem; line-height:1.6; margin-top:.75rem; }
+.case-note { margin:2.5rem auto; padding:1.25rem 1.5rem; border-left:2px solid var(--border-accent); color:var(--text-muted); max-width:56rem; }
+.case-bottom-section { padding:4rem 0 5rem; background:var(--bg-primary); border-top:1px solid var(--border-primary); }
+.case-bottom-section .section-title { text-align:center; margin-bottom:2rem; }
+.case-bottom-nav { display:flex; justify-content:center; align-items:center; gap:1rem; flex-wrap:wrap; }
+.case-study a:focus-visible { outline:3px solid var(--accent-primary); outline-offset:4px; }
+.case-study p { text-wrap:pretty; }
+@media (min-width:768px) { .case-heading { font-size:2.25rem; } }
+@media (min-width:1280px) { .case-heading { font-size:2.5rem; } }
+@media (max-width:767px) {
+ .case-wrap { padding-inline:1rem; }
+ .case-hero { padding:3rem 0 2.5rem; }
+ .case-title { font-size:2.25rem; }
+ .case-lede { font-size:1.125rem; }
+ .case-meta { gap:1.25rem 1.5rem; margin-top:2rem; }
+ .case-hero-media { padding:2rem 1rem; }
+ .case-section { padding:3.5rem 0; }
+ .case-layout--split,.case-layout--gallery,.case-layout--cards { grid-template-columns:1fr; }
+ .case-section-head { margin-bottom:2rem; }
+ .case-heading { font-size:1.75rem; }
+ .case-study > header .header-container { gap:1rem; }
+ .case-study > header nav { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; justify-content:flex-end; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto!important; } *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header role="banner">
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="index.html" aria-label="Paul Murphy — home"><img id="headerLogo" src="img/logo.png" alt="Paul Murphy Logo" class="logo-image" width="40" height="40"></a>
+      <div class="logo-text"><span id="headerName"><a href="index.html" style="text-decoration:none;color:inherit">Paul Murphy</a></span><p class="logo-subtitle">Experience Designer</p></div>
+    </div>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="index.html#projects" class="btn btn-primary btn-small">← Back to Portfolio</a>
+      <a href="Paul_Murphy_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Open resume (PDF, opens in a new tab)">Resume</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content" class="case-study">
+  <section class="case-hero">
+    <div class="case-wrap">
+      <p class="case-eyebrow">End-to-end UI/UX · Early career</p>
+      <h1 class="case-title">Paranoia: Happiness is Mandatory</h1>
+      <p class="case-lede">My first game-industry role was a two-year trial by fire. Working directly with the Art Director on a small team, I owned the game's entire 2D interface.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>UI/UX Designer</dd></div>
+        <div><dt>Timeline</dt><dd>2 years</dd></div>
+        <div><dt>Platform</dt><dd>PC</dd></div>
+      </dl>
+    </div>
+  </section>
+  <div class="case-hero-media">
+    <figure class="case-media"><img class="case-hero-art" src="img/P3-img/project-3-hero.jpg" alt="Screenshot of the HUD during combat in game." fetchpriority="high">
+  </div>
+  <div id="project-sections">
+  <section class="case-section" aria-labelledby="section-01">
+    <div class="case-wrap">
+      <header class="case-section-head">
+        <p class="case-number">01 / End-to-end ownership</p>
+        <h2 id="section-01" class="case-heading">Learning to own the whole interface</h2>
+        <p class="case-intro">I designed and created everything from the UX and visual design through to the 2D assets and motion graphics.</p>
+      </header>
+      <div class="case-layout case-layout--split">
+        <article class="case-panel"><h3>What I owned</h3><p>HUD, menus, maps, inventory, icons, diegetic UI and motion.</p></article>
+        <article class="case-panel"><h3>Working with the team</h3><p>On a small team, I worked directly with the Art Director and engineers, learning to communicate design intent clearly enough for others to build.</p></article>
+      </div>
+      <div class="case-layout case-layout--text" style="margin-top:1.25rem">
+        <figure class="case-media"><img src="img/P3-img/project-3-process.jpg" alt="Graphic showing all of the game features I owned; HUD, Menus, Maps, Inventory, Icons, Diegetic UI and Motion." loading="lazy">
+      </div>
+    </div>
+  </section>
+  <section class="case-section" aria-labelledby="section-02">
+    <div class="case-wrap">
+      <header class="case-section-head">
+        <p class="case-number">02 / Career reflection</p>
+        <h2 id="section-02" class="case-heading">Finding my UX focus</h2>
+        <p class="case-intro">Paranoia was where I discovered that I enjoyed solving interaction and information problems more than producing large quantities of UI art.</p>
+      </header>
+      <div class="case-layout case-layout--split">
+        <article class="case-panel"><h3>What it taught me</h3><p>Working across the full interface helped me connect interaction design, visual hierarchy, asset creation and implementation.</p></article>
+        <article class="case-panel"><h3>What changed</h3><p>It became the foundation for the more systems-focused UX work I pursued in later projects.</p></article>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  
+  <section class="case-bottom-section" aria-labelledby="explore-projects-title">
+  <div class="case-wrap" style="text-align:center">
+    <h2 id="explore-projects-title" class="section-title">Explore More Projects</h2>
+    <nav class="case-bottom-nav" aria-label="Project navigation">
+      <a class="btn btn-primary" href="project-4.html">Next Project →</a>
+      <a class="btn btn-primary" href="index.html#projects">All Projects</a>
+    </nav>
+  </div>
+</section>
+</main>
+<footer role="contentinfo">
+  <div class="footer-container">
+    <p class="footer-copyright">© 2026 PMXD. All rights reserved.</p>
+    <nav class="footer-links" id="socialLinks" role="navigation" aria-label="Social media links">
+      <a href="https://www.linkedin.com/in/paul-murphy90/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.mobygames.com/person/1052665/paul-murphy/" class="footer-link" target="_blank" rel="noopener noreferrer">MobyGames</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

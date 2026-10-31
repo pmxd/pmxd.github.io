@@ -1,0 +1,1143 @@
+/**
+ * ============================================================================
+ * PORTFOLIO STYLESHEET - Paul Murphy
+ * ============================================================================
+ * 
+ * This file contains all the visual styling for your portfolio.
+ * Everything is organized by section for easy editing.
+ * 
+ * SECTIONS:
+ * 1. Color Themes (Line 20)
+ * 2. Base Styles (Line 100)
+ * 3. Typography (Line 150)
+ * 4. Layout & Spacing (Line 200)
+ * 5. Header Styles (Line 250)
+ * 6. Hero Section (Line 300)
+ * 7. Projects Section (Line 400)
+ * 8. About Section (Line 500)
+ * 9. Career Timeline (Line 600)
+ * 10. Credits Section (Line 700)
+ * 11. Testimonials (Line 800)
+ * 12. Contact Section (Line 900)
+ * 13. Footer (Line 950)
+ * 14. Animations (Line 1000)
+ * 15. Accessibility (Line 1100)
+ * 16. Responsive Design (Line 1200)
+ */
+
+/* ============================================================================
+   1. COLOR THEMES
+   ============================================================================
+   📝 EDIT COLORS HERE - Choose one theme or create your own!
+   To switch themes, comment out the current theme and uncomment another.
+   ============================================================================ */
+
+/* 🎨 MINIMALIST MONOCHROME THEME (Default - Active) */
+:root {
+    /* Background Colors */
+    --bg-primary: #000000;           /* 📝 Main background - pure black */
+    --bg-secondary: #171717;         /* 📝 Card backgrounds - dark gray */
+    --bg-tertiary: #262626;          /* 📝 Hover states - medium gray */
+    
+    /* Text Colors */
+    --text-primary: #fafafa;         /* 📝 Main text - almost white */
+    --text-secondary: #e5e5e5;       /* 📝 Secondary text - light gray */
+    --text-muted: #a3a3a3;           /* 📝 Muted text - medium gray */
+    
+    /* Accent Colors */
+    --accent-primary: #ffffff;       /* 📝 Main accent - pure white */
+    --accent-secondary: #d4d4d4;     /* 📝 Secondary accent - light gray */
+    
+    /* Border Colors */
+    --border-primary: #404040;       /* 📝 Main borders - dark gray */
+    --border-accent: #ffffff;        /* 📝 Accent borders - white */
+    
+    /* Overlay Colors */
+    --overlay-bg: #000000;           /* 📝 Image overlay - black */
+    --overlay-opacity: 0.4;          /* 📝 Overlay transparency (0-1) */
+    
+    /* Grid Pattern */
+    --grid-opacity: 0.03;            /* 📝 Background grid visibility (0-1) */
+}
+
+/* 🎨 DARK BLUE THEME (Professional)
+   To use: Remove the comment marks below and comment out the theme above */
+/*
+:root {
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --bg-tertiary: #1e293b;
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-primary: #60a5fa;
+    --accent-secondary: #3b82f6;
+    --border-primary: #1e293b;
+    --border-accent: #60a5fa;
+    --overlay-bg: #020617;
+    --overlay-opacity: 0.4;
+    --grid-opacity: 0.03;
+}
+*/
+
+/* 🎨 WARM SUNSET THEME (Inviting)
+   To use: Remove the comment marks below and comment out the active theme */
+/*
+:root {
+    --bg-primary: #1c0f0a;
+    --bg-secondary: #2d1810;
+    --bg-tertiary: #4a2818;
+    --text-primary: #fef3e2;
+    --text-secondary: #f5dbb8;
+    --text-muted: #d4a574;
+    --accent-primary: #fb923c;
+    --accent-secondary: #f97316;
+    --border-primary: #4a2818;
+    --border-accent: #fb923c;
+    --overlay-bg: #1c0f0a;
+    --overlay-opacity: 0.4;
+    --grid-opacity: 0.03;
+}
+*/
+
+/* ============================================================================
+   2. BASE STYLES
+   ============================================================================
+   Core styles that apply to the entire page
+   ⚠️ Be careful editing this section
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;         /* 📝 Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;                /* 📝 Line spacing for readability */
+    overflow-x: hidden;              /* Prevent horizontal scrolling */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background grid pattern - gives sketchbook feel */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg, 
+            transparent, 
+            transparent 39px, 
+            rgba(255,255,255, var(--grid-opacity)) 39px, 
+            rgba(255,255,255, var(--grid-opacity)) 40px
+        ),
+        repeating-linear-gradient(
+            90deg, 
+            transparent, 
+            transparent 39px, 
+            rgba(255,255,255, var(--grid-opacity)) 39px, 
+            rgba(255,255,255, var(--grid-opacity)) 40px
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================================
+   3. TYPOGRAPHY
+   ============================================================================
+   📝 Font sizes, weights, and text styles
+   Adjust these to change the overall text appearance
+   
+   📝 TO CHANGE THE FONT:
+   1. Choose a font from Google Fonts (fonts.google.com)
+   2. Add the font link to index.html <head> section
+   3. Update the font-family below
+   
+   Example fonts to try:
+   - font-family: 'Roboto', sans-serif;
+   - font-family: 'Open Sans', sans-serif;
+   - font-family: 'Montserrat', sans-serif;
+   - font-family: 'Poppins', sans-serif;
+   - font-family: 'Lato', sans-serif;
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;                /* 📝 Heading weight - bold */
+    line-height: 1.2;                /* 📝 Tighter line height for headings */
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;                 /* 📝 Main heading size - 48px */
+}
+
+h2 {
+    font-size: 2.25rem;              /* 📝 Section heading size - 36px */
+}
+
+h3 {
+    font-size: 1.5rem;               /* 📝 Subsection heading - 24px */
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;     /* 📝 Smooth color transitions */
+}
+
+/* ============================================================================
+   4. LAYOUT & SPACING
+   ============================================================================
+   📝 Controls spacing, padding, and container widths
+   ============================================================================ */
+
+/* Maximum content width - keeps text readable */
+.max-w-7xl {
+    max-width: 1280px;               /* 📝 Maximum container width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max-w-4xl {
+    max-width: 896px;
+}
+
+.max-w-3xl {
+    max-width: 768px;
+}
+
+/* Section padding - controls vertical spacing */
+.section-padding {
+    padding: 3rem 0;                 /* Vertical rhythm only; container-padding owns horizontal gutters */
+}
+
+/* Container padding */
+.container-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* ============================================================================
+   5. HEADER STYLES
+   ============================================================================
+   📝 Top navigation bar with logo and resume button
+   ============================================================================ */
+
+header {
+    border-bottom: 1px solid var(--border-primary);
+    background-color: var(--bg-primary);
+    position: sticky;                /* 📝 Keeps header at top when scrolling */
+    top: 0;
+    z-index: 100;                    /* 📝 Ensures header stays above other content */
+    backdrop-filter: blur(10px);     /* 📝 Blur effect for modern look */
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1rem;              /* 📝 Matched with footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+/* Keep the logo and text block consistent across all pages */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-container > a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.logo-image {
+    display: block;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+.logo-text h1 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.logo-subtitle {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ============================================================================
+   6. HERO SECTION
+   ============================================================================
+   📝 Large banner at top with name and rotating words
+   ============================================================================ */
+
+.hero-section {
+    position: relative;
+    min-height: 500px;               /* 📝 Minimum height - adjust for taller/shorter */
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Hero background image with overlay */
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;         /* 📝 Center the image */
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right, 
+        var(--overlay-bg), 
+        var(--overlay-bg)
+    );
+    opacity: var(--overlay-opacity); /* 📝 Darkens image for text readability */
+}
+
+/* Hero content */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding-top: 10rem;               /* 📝 Vertical spacing around hero text */
+    padding-bottom: 10rem;
+}
+
+.hero-greeting {
+    font-size: 1.25rem;              /* 📝 Greeting text size - 20px */
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.hero-name {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 3rem;                 /* 📝 Main title size - 48px */
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.125rem;             /* 📝 Description text size - 18px */
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 42rem;                /* 📝 Limit line length for readability */
+}
+
+/* Rotating word container */
+.rotating-word-container {
+    display: inline-block;
+    background-color: rgba(23, 23, 23, 0.5);
+    border: 1px solid rgba(64, 64, 64, 0.5);
+    padding: 0.25rem 0.75rem;        /* 📝 Padding around rotating word */
+    border-radius: 0.25rem;
+    min-width: 140px;                /* 📝 Minimum width to prevent jumping */
+    text-align: center;
+}
+
+.rotating-word {
+    color: var(--accent-primary);
+    font-weight: 600;
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;  /* 📝 Smooth transitions */
+}
+
+/* ============================================================================
+   7. PROJECTS SECTION
+   ============================================================================
+   📝 Grid of project cards on homepage
+   ============================================================================ */
+
+.projects-section {
+    background-color: rgba(23, 23, 23, 0.5);
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.section-title {
+    font-size: 2rem;                 /* 📝 Section heading size - 32px */
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;      /* 📝 1 column on mobile */
+    gap: 1.5rem;                     /* 📝 Space between project cards - 24px */
+}
+
+.projects-grid .project-card:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
+}
+
+/* Individual project card */
+.project-card {
+    position: relative;
+    aspect-ratio: 4 / 3;             /* 📝 Card proportions - 4:3 ratio */
+    overflow: hidden;
+    border: 1px solid var(--border-primary);
+    background-color: var(--bg-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;       /* 📝 Smooth hover transitions */
+}
+
+.project-card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-4px);    /* 📝 Lift effect on hover */
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);         /* 📝 Black & white by default */
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    object-position: 100% 5%;
+
+}
+
+.project-card:hover img {
+    filter: grayscale(0%);           /* 📝 Full color on hover */
+    opacity: 1;
+    transform: scale(1.05);          /* 📝 Slight zoom on hover */
+}
+
+/* Project card overlay (appears on hover) */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;                      /* 📝 Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;                      /* 📝 Visible on hover */
+}
+
+.project-category {
+    font-size: 0.875rem;             /* 📝 14px */
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-title {
+    font-size: 1.5rem;               /* 📝 24px */
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ============================================================================
+   8. ABOUT SECTION
+   ============================================================================
+   📝 About me text with background portrait
+   ============================================================================ */
+
+.about-section {
+    position: relative;
+    min-height: 400px;
+}
+
+.about-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.about-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        var(--overlay-bg),
+        var(--overlay-bg)
+    );
+    opacity: var(--overlay-opacity);
+}
+
+.about-content {
+    position: relative;
+    z-index: 10;
+}
+
+.about-text {
+    font-size: 1.125rem;             /* 📝 18px - larger for readability */
+    line-height: 1.8;                /* 📝 Generous line spacing */
+    color: var(--text-primary);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);  /* 📝 Shadow for legibility */
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================================================
+   9. CAREER TIMELINE
+   ============================================================================
+   📝 Work history with connecting line
+   ============================================================================ */
+
+.career-section {
+    background-color: rgba(23, 23, 23, 0.5);
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.timeline-container {
+    max-width: 8000px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;              /* 📝 Space for dot and line */
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Timeline dot */
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;                      /* 📝 Dot size */
+    height: 8px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    transform: translateX(-3.5px);
+}
+
+/* Connecting line between jobs */
+.timeline-line {
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    bottom: 0;
+    width: 1px;                      /* 📝 Line thickness */
+    background-color: var(--accent-primary);
+    opacity: 0.5;                    /* 📝 Semi-transparent line */
+}
+
+.timeline-company {
+    font-size: 1.5rem;               /* 📝 24px */
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.timeline-role {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.timeline-title {
+    font-size: 1rem;                 /* 📝 16px */
+    color: var(--text-muted);
+}
+
+.timeline-period {
+    font-size: 0.875rem;             /* 📝 14px */
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* ============================================================================
+   10. CREDITS SECTION
+   ============================================================================
+   📝 Game logos in bowling pin layout
+   ============================================================================ */
+
+.credits-section {
+    background-color: var(--bg-primary);
+}
+
+.credits-grid {
+    display: grid;
+    gap: 2rem;                       /* 📝 Space between logo circles */
+    justify-items: center;
+    max-width: 6000px;
+    margin: 0 auto;
+}
+
+/* Bowling pin layout: 4 on top, 3 on bottom */
+.credits-row-top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    justify-items: center;
+}
+
+.credits-row-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 75%;                      /* 📝 Narrower to create pin shape */
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.credit-item {
+    width: 80px;                     /* 📝 Circle size */
+    height: 80px;
+    border-radius: 5%;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.credit-item:hover {
+    border-color: var(--accent-primary);
+    transform: scale(1.1);           /* 📝 Grow on hover */
+    background-color: var(--bg-tertiary);
+}
+
+.credit-item img {
+    width: 100%;                      /* 📝 Logo size within circle */
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+    border-radius: 5%;
+}
+
+.credit-item:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* ============================================================================
+   11. TESTIMONIALS
+   ============================================================================
+   📝 Client/colleague quotes
+   ============================================================================ */
+
+.testimonials-section {
+    background-color: rgba(23, 23, 23, 0.5);  /* 📝 Same grey overlay as projects/career */
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;                       /* 📝 Space between testimonial cards */
+}
+
+.testimonial-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    padding: 2rem;                   /* 📝 Inner padding */
+    border-radius: 0.5rem;           /* 📝 Rounded corners - 8px */
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-4px);     /* 📝 Lift on hover */
+}
+
+.testimonial-text {
+    font-size: 1rem;                 /* 📝 16px */
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;             /* 📝 14px */
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.testimonial-link:hover {
+    color: var(--accent-secondary);
+}
+
+/* ============================================================================
+   12. CONTACT SECTION
+   ============================================================================
+   📝 Call to action with email button
+   ============================================================================ */
+
+.contact-section {
+    background-color: var(--bg-primary);
+    text-align: center;              /* 📝 Center all content */
+}
+
+.contact-title {
+    font-size: 2.5rem;               /* 📝 40px */
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-description {
+    font-size: 1.125rem;             /* 📝 18px */
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================================
+   13. FOOTER
+   ============================================================================
+   📝 Bottom of page with copyright and social links
+   ============================================================================ */
+
+footer {
+    border-top: 1px solid var(--border-primary);
+    background-color: var(--bg-primary);  /* 📝 Solid background like header */
+    position: relative;                    /* 📝 Position above grid pattern */
+    z-index: 10;                          /* 📝 Ensures footer is above background grid */
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1rem;                   /* 📝 Increased to match header better */
+    display: flex;
+    flex-direction: row;                  /* 📝 Horizontal layout like header */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;             /* 📝 14px */
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;                     /* 📝 Space between social links */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    font-size: 0.875rem;             /* 📝 14px */
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent-primary);
+}
+
+/* ============================================================================
+   14. BUTTONS
+   ============================================================================
+   📝 Button styles used throughout the site
+   ============================================================================ */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;           /* 📝 Button padding - 12px/32px */
+    font-size: 0.875rem;             /* 📝 14px */
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.25rem;          /* 📝 Slight rounding - 4px */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    background-color: transparent;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    transform: translateY(-2px);     /* 📝 Slight lift on hover */
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;            /* 📝 Larger button - 16px/40px */
+    font-size: 1rem;                 /* 📝 16px */
+}
+
+/* ============================================================================
+   15. ANIMATIONS
+   ============================================================================
+   📝 Keyframe animations and transitions
+   ============================================================================ */
+
+/* Fade in on page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ============================================================================
+   16. ACCESSIBILITY
+   ============================================================================
+   📝 Styles for screen readers and keyboard navigation
+   ⚠️ Do not remove these - they ensure the site is accessible
+   ============================================================================ */
+
+/* Screen reader only content (visually hidden but readable by screen readers) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to main content link - visible only when focused */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 1rem;                       /* 📝 Appears when tabbed to */
+}
+
+/* Focus styles for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+/* Ensure sufficient color contrast for text */
+::selection {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+/* ============================================================================
+   17. RESPONSIVE DESIGN
+   ============================================================================
+   📝 Media queries for different screen sizes
+   Breakpoints: Mobile (<768px), Tablet (768-1023px), Desktop (1024px+)
+   ============================================================================ */
+
+/* Shared header/footer layout: identical rules on index and project pages. */
+header[role="banner"] nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 767px) {
+    .projects-grid .project-card:first-child {
+        grid-column: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .header-container {
+        gap: 0.75rem;
+    }
+
+    header[role="banner"] nav {
+        gap: 0.5rem;
+    }
+
+    header[role="banner"] nav .btn {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+        row-gap: 0.75rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .header-container {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    header[role="banner"] nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+}
+
+/* TABLET & UP (768px and above) */
+@media (min-width: 768px) {
+    /* Layout */
+    .section-padding {
+        padding: 6rem 0;                 /* Vertical rhythm only; shared 1rem container gutter */
+    }
+    
+    /* Typography */
+    .hero-title {
+        font-size: 3.5rem;           /* 📝 56px on tablet - reduced from 72px */
+    }
+    
+    .hero-greeting {
+        font-size: 1.5rem;           /* 📝 24px on tablet - reduced from 30px */
+    }
+    
+    .hero-description {
+        font-size: 1.25rem;          /* 📝 20px on tablet - reduced from 24px */
+    }
+    
+    .section-title {
+        font-size: 2.25rem;          /* 📝 36px on tablet */
+    }
+    
+    /* Projects grid - 2 columns on tablet */
+.projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* Hero project - spans both columns */
+.projects-grid .project-card:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
+}
+    
+    /* Testimonials - 2 columns */
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer */
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Timeline roles - horizontal layout */
+    .timeline-role {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    
+    /* Contact */
+    .contact-title {
+        font-size: 3rem;             /* 📝 48px on tablet */
+    }
+    /* Credits section - better spacing */
+    .credits-grid {
+        gap: 3rem;
+    }
+    .credit-item {
+        width: 120px;                /* 📝 Larger circles on desktop */
+        height: 120px;
+    }
+}
+
+/* DESKTOP (1024px and above) */
+@media (min-width: 1024px) {
+    /* Layout */
+    .section-padding {
+        padding: 6rem 0;
+    }
+    
+    /* Typography */
+    .hero-title {
+        font-size: 4rem;             /* 📝 64px on desktop - reduced from 96px */
+    }
+    
+    /* Hero section */
+    .hero-section {
+        min-height: 600px;           /* 📝 Taller on desktop */
+    }
+    
+    /* Testimonials - 3 columns on desktop */
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Credits section - better spacing */
+    .credits-grid {
+        gap: 5rem;
+    }
+    
+    .credit-item {
+        width: 150px;                /* 📝 Larger circles on desktop */
+        height: 150px;
+    }
+}
+
+/* LARGE DESKTOP (1280px and above) */
+@media (min-width: 1280px) {
+    .hero-title {
+        font-size: 4.5rem;           /* 📝 72px on large screens - reduced from 112px */
+    }
+    
+    .section-title {
+        font-size: 2.5rem;           /* 📝 40px on large screens */
+    }
+}
+
+/* ============================================================================
+   18. PRINT STYLES
+   ============================================================================
+   📝 Optimized styles for printing
+   ============================================================================ */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    body::before {
+        display: none;               /* Remove grid pattern when printing */
+    }
+    
+    header {
+        position: static;
+    }
+    
+    .hero-background,
+    .about-background {
+        display: none;               /* Remove background images when printing */
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")"; /* Show URLs when printing */
+    }
+}
+
+/* ============================================================================
+   END OF STYLESHEET
+   ============================================================================ */
