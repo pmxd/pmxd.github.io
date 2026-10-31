@@ -704,6 +704,8 @@ header {
 }
 
 .testimonial-card {
+    position: relative;              /* Anchor for the full-card link */
+    cursor: pointer;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     padding: 2rem;                   /* 📝 Inner padding */
@@ -734,8 +736,27 @@ header {
     transition: color 0.3s ease;
 }
 
-.testimonial-link:hover {
+.testimonial-link:hover,
+.testimonial-card:hover .testimonial-link {
     color: var(--accent-secondary);
+}
+
+/* Make the whole card clickable: the link's overlay covers the card */
+.testimonial-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+/* Show keyboard focus around the whole card */
+.testimonial-card:focus-within {
+    border-color: var(--border-accent);
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+.testimonial-link:focus-visible {
+    outline: none;
 }
 
 /* ============================================================================
